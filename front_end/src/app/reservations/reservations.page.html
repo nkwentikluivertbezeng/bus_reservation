@@ -1,0 +1,20 @@
+
+<ion-content >
+  <h5 style="color: rgb(57, 101, 143); margin-left:20%;" style="margin-top: 100px;"><b>List Of Booked Trips</b></h5>
+  <div *ngIf="my_reservations.length==0" >
+     <h1><i>YOU DONT HAVE ANY RESERVATIONS </i></h1>
+     <a routerLink="/home">book now</a>
+  </div>
+  <ion-card >
+    <ion-list *ngIf="show_reservations" style="height: 70px;">
+      <ion-item *ngFor="let item of my_reservations;index as i" >
+
+          <p><ion-label style=" font-size: small;">{{schedules[i].location}} - {{schedules[i].destination}}</ion-label></p>
+          <div style=" margin-right: 0px;">
+  <ion-button size="small" color="danger"  (click)="delete_reservation(item.booking_id)"><ion-icon name="trash"></ion-icon></ion-button>
+  <ion-button size="small" color="secondary" (click)="show_details(i)"  ><ion-icon name="eye"></ion-icon></ion-button>
+  </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

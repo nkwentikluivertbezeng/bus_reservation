@@ -1,0 +1,35 @@
+ion-col {
+    background-color: #7a6969;
+    border: solid 1px #fff;
+    color: #000000;
+    text-align: center;
+    padding: 0 0;
+    width: 20px;
+  }
+  button:active{
+    color: red;
+}
+.seat_selected{
+    --ion-color-primary: #49148d;
+    --ion-color-primary-rgb: 66,140,255;
+    --ion-color-primary-contrast: #000000; 
+}
+.seat_not_selected{
+  --ion-color-primary: #000000;
+    --ion-color-primary-rgb: 66,140,255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #3a7be0;
+    --ion-color-primary-tint: #5598ff;
+
+}
+.seat_not_selected:disabled{
+  --ion-color-primary: #10aa02;
+    --ion-color-primary-rgb: 66,140,255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #3a7be0;
+    --ion-color-primary-tint: #5598ff;
+    opacity: 0.5;
+
+}

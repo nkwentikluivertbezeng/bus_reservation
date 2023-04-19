@@ -1,0 +1,109 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-card width="50%" style="margin-top: 100px;">
+                <form>
+                  <div id="container">
+                    <ion-list>
+                      <ion-item>
+                        <ion-icon name="bus" slot="end"></ion-icon>
+                        <ion-select placeholder="location" (ionChange)="onSelectFromLocation($event)" >
+                          <ion-select-option value="BAMENDA"><b>BAMENDA</b></ion-select-option>
+                          <ion-select-option value="DOUALA"> <b>DOUALA</b></ion-select-option>
+                          <ion-select-option value="BUEA"> <b>BUEA</b></ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                      <ion-item>
+                        <ion-icon name="location" slot="end"></ion-icon>
+                     <ion-select placeholder="destination" (ionChange)="onSelectToLocation($event)">
+                          <ion-select-option value="BAMENDA"><b>BAMENDA</b></ion-select-option>
+                          <ion-select-option value="DOUALA"> <b>DOUALA</b></ion-select-option>
+                          <ion-select-option value="BUEA"><b>BUEA</b></ion-select-option>
+                        </ion-select>
+                     
+                      </ion-item>
+
+                      <!-- <ion-item>
+                        <ion-icon name="time" slot="end"></ion-icon>
+                        <ion-select  placeholder="Select time" (ionChange)="onSelectTime($event)">
+                          <ion-select-option value="morning">morning</ion-select-option>
+                          <ion-select-option value="night">evening</ion-select-option>
+                        </ion-select>
+                      </ion-item> -->
+                      
+                      
+                      <ion-accordion-group expand="inset">
+                      <ion-accordion value="first">
+                        <ion-item slot="header" color="rose">
+                          <ion-label>Select Date</ion-label>
+                        </ion-item>
+                        <div class="ion-padding" slot="content">
+                          <ion-datetime presentation="date"  [(ngModel)]="date" [ngModelOptions]="{standalone: true}"></ion-datetime>
+                        </div>
+                      </ion-accordion>
+                  </ion-accordion-group>
+
+                      
+                    </ion-list>
+
+                    <ion-button expand="block" (click)="searchbus()" style="border-radius: 30px;"><ion-icon name="search" slot="start"></ion-icon>Search
+                      Buses</ion-button>
+                  </div>
+                </form>
+  </ion-card>
+
+
+
+ 
+
+  <ion-card>
+
+    <swiper [slidesPerView]="1.2" [loop]="true" class="mod-mousewheel" >
+
+      <ng-template swiperSlide class="swiper-slide" *ngFor="let schedules of advertisment_schedule" ngIf="count>0">
+        <ion-card id="a">
+          <div class="a">
+            <ion-img height="80px"
+              src="../../assets/bus.avif"
+              alt="night"></ion-img>
+            <ion-card padding>
+              <p> {{schedules.location}}-{{ schedules.destination }}</p>
+              <div>
+                <ion-icon name="star" slot="end"></ion-icon>
+                <ion-icon name="star" slot="end"></ion-icon>
+                <ion-icon name="star" slot="end"></ion-icon>
+                <p>VIP </p>
+               <ion-button [routerLink]="['booking',schedules.schedule_id,user_id]">book now</ion-button>
+  
+              </div>
+            </ion-card>
+          </div>
+        </ion-card>
+        
+      </ng-template>
+
+      <ng-template swiperSlide>
+        <ion-card id="a">
+
+          <div >
+            <ion-img height="80px"
+              src="../../assets/bus2.webp"
+              alt="night"></ion-img>
+            <ion-card padding>
+              <div>
+        <i><b>       
+          <ion-title><span style="color:rgb(5, 85, 189)198, 230; font-weight: 800;">BOOK</span><span style="color:rgb(6, 75, 131);font-weight: 800;">NOW</span></ion-title>
+<br> 
+          We have the best buses in the market equipped with the latest technologies and
+          professional drivers to carry you safely to your destinations
+          thanks for trusting us</b></i>
+              </div>
+            </ion-card>
+          </div>
+        </ion-card>
+       
+      </ng-template>
+    </swiper>
+
+  </ion-card>
+</ion-content>

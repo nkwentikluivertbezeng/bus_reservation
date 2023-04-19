@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model booking {
+  booking_id   Int      @id @default(autoincrement())
+  user_id      Int
+  schedule_id  Int
+  booking_date DateTime     @default(now())
+  seat_number   Int
+  schedule     schedule @relation(fields: [schedule_id], references: [schedule_id], onDelete: Cascade, map: "booking_ibfk_1")
+  user         user     @relation(fields: [user_id], references: [user_id], onDelete: Cascade, map: "booking_ibfk_2")
+  ticket       ticket[]
+
+  @@index([schedule_id], map: "schedule_id")
+  @@index([user_id], map: "user_id")
+}
+
+model buses {
+  bus_id     Int        @id @default(autoincrement())
+  bus_number String     @db.VarChar(10)   @unique
+  seats      Int?       @default(33)
+  schedule   schedule[]
+  seat       seat[]
+}
+
+model schedule {
+  schedule_id    Int       @id @default(autoincrement())
+  bus_id         Int
+  departure_date DateTime  
+  departure_time DateTime
+  location       String    @db.VarChar(20)
+  destination    String    @db.VarChar(20)
+  bus_fare       Int
+  booking        booking[]
+  buses          buses     @relation(fields: [bus_id], references: [bus_id], onDelete: Cascade, map: "test2")
+
+  @@index([bus_id], map: "test2")
+}
+
+model ticket {
+  ticket_id     Int     @id @default(autoincrement())
+  booking_id    Int
+  ticket_number String  @db.VarChar(20)
+  booking       booking @relation(fields: [booking_id], references: [booking_id], onDelete: Cascade, map: "test3")
+
+  @@index([booking_id], map: "test3")
+}
+
+model user {
+  user_id  Int       @id @default(autoincrement())
+  fname    String    @db.VarChar(15)
+  lname    String    @db.VarChar(15)
+  phone_number    Int     @default(0)
+  Role    Role     @default(USER)  
+  email String       @unique
+  password String?   
+  booking  booking[]
+}
+
+model seat {
+  seat_id     Int   @id @default(autoincrement())
+  bus_id      Int
+  seat_number Int
+  is_reserved Boolean 
+  buses       buses @relation(fields: [bus_id], references: [bus_id], onDelete: Cascade, map: "test4")
+
+  @@index([bus_id], map: "test4")
+}
+
+enum Role{
+  USER
+  ADMIN
+}

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Register</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card >
+    <ion-item lines="full" >
+      <ion-label position="floating">First name</ion-label>
+      <ion-input type="text" required #fname></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input type="text" required #lname></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">email</ion-label>
+      <ion-input type="email" required #email></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" required #password></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">confirm Password</ion-label>
+      <ion-input type="password" required #confirm_password></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">MOMO number</ion-label>
+      <ion-input type="number" required #number></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="signup(fname.value,lname.value,email.value,password.value,confirm_password.value,number.value)" >Sign Up</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

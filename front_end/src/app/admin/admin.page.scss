@@ -1,0 +1,44 @@
+ion-grid {
+    --ion-grid-column-padding: 5px;
+    border-collapse: collapse;
+    border-style: hidden;
+    
+    ion-row:first-child {
+      background-color:  #3f4642;
+      font-weight: bold;
+    }
+    ion-col {
+      
+      font-size:15px;
+     
+      border: 1px solid black;
+      border-bottom: 0;
+      border-right: 0;
+    }
+    ion-col:last-child {
+      border-right: 1px solid black;
+    }
+    
+    ion-row:last-child {
+      border-bottom: 1px solid black;
+      font-size: small;
+    }
+  }
+  .bus_details_button:hover{
+    --ion-color-primary: #bebebe;
+    background-color:#212520;
+  }
+  body {
+    --ion-color-primary: #b5bbc5;
+    --ion-color-primary-rgb: 66,140,255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #111213;
+    --ion-color-primary-tint: #4e5053;
+  }
+  .selected{
+    --ion-color-primary: #212520;
+    --ion-color-primary-rgb: 66,140,255;
+    --ion-color-primary-contrast: #505050; 
+  }
+ 

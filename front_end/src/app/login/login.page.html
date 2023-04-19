@@ -1,0 +1,28 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+<div style="display: flex ; width: fit-content;" >
+  <ion-title>Booking</ion-title>
+  <img src="https://cdn.lovesavingsgroup.com/logos/bus-online-ticket.jpg" alt="" height="70px" width="90px" style="position:inherit;">
+
+</div>
+ </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="auth-form">
+<ion-card style="margin-top: 100px;">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button [routerLink]="['/signup']" expand="block" color="primary">Register</ion-button>
+        <span class="divider line one-line">or</span>
+        <span class="already">Already a user?</span>
+        <ion-button [routerLink]="['/signin']" expand="block" color="danger">Sign In</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+</ion-content>
+

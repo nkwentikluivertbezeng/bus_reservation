@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngIf="showseatplan" >
+    <ion-grid >
+   
+      <ion-row class="ion-justify-content-start">
+        <ion-col size="1.80">
+          <ion-img  src="../../assets/133888-1-scaled.jpg" alt="bus"></ion-img>
+        </ion-col>
+        <!-- https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80  -->
+      </ion-row>
+      
+  <ion-row>
+    <ion-col ><ion-button expand="block" (click)="check_seat(0)"  [ngClass]="style(0) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[0].is_reserved">1</ion-button></ion-col>
+    <ion-col><ion-button expand="block" (click)="check_seat(1)" [ngClass]="style(1) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[1].is_reserved">2</ion-button></ion-col>
+    <ion-col><ion-button expand="block"  (click)="check_seat(2)"  [ngClass]="style(2) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[2].is_reserved">3</ion-button></ion-col>
+    <ion-col offset="3"><ion-button  expand="block"  (click)="check_seat(3)"  [ngClass]="style(3) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[3].is_reserved">4</ion-button></ion-col>
+    <ion-col><ion-button expand="block"  (click)="check_seat(4)"  [ngClass]="style(4) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[4].is_reserved">5</ion-button></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-button expand="block"  (click)="check_seat(5)"  [ngClass]="style(5) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[5].is_reserved">6</ion-button></ion-col>
+    <ion-col><ion-button expand="block" (click)="check_seat(6)"  [ngClass]="style(6) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[6].is_reserved">7</ion-button></ion-col>
+    <ion-col><ion-button expand="block"  (click)="check_seat(7)"  [ngClass]="style(7) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[7].is_reserved">8</ion-button></ion-col>
+    <ion-col offset="3"><ion-button expand="block" (click)="check_seat(8)"  [ngClass]="style(8) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[8].is_reserved">9</ion-button></ion-col>
+    <ion-col><ion-button expand="block"  (click)="check_seat(9)"  [ngClass]="style(9) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[9].is_reserved">10</ion-button></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-button expand="block"  (click)="check_seat(10)"  [ngClass]="style(10) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[10].is_reserved">11</ion-button></ion-col>
+    <ion-col><ion-button expand="block" (click)="check_seat(11)"  [ngClass]="style(11) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[11].is_reserved">12</ion-button></ion-col>
+    <ion-col><ion-button expand="block"  (click)="check_seat(12)"  [ngClass]="style(12) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[12].is_reserved">13</ion-button></ion-col>
+    <ion-col offset="3"><ion-button expand="block"  (click)="check_seat(13)"  [ngClass]="style(13) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[13].is_reserved">14</ion-button></ion-col>
+    <ion-col><ion-button expand="block" (click)="check_seat(14)"  [ngClass]="style(14) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[14].is_reserved">15</ion-button></ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-button expand="block" expand="block" (click)="check_seat(15)"  [ngClass]="style(15) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[15].is_reserved">16</ion-button></ion-col>
+    <ion-col><ion-button expand="block" expand="block" (click)="check_seat(16)"  [ngClass]="style(16) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[16].is_reserved">17</ion-button></ion-col>
+    <ion-col><ion-button expand="block" expand="block" (click)="check_seat(17)"  [ngClass]="style(17) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[17].is_reserved">18</ion-button></ion-col>
+    <ion-col offset="3"><ion-button expand="block" expand="block" (click)="check_seat(18)"  [ngClass]="style(18) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[18].is_reserved">19</ion-button></ion-col>
+    <ion-col><ion-button expand="block" expand="block" (click)="check_seat(19)"  [ngClass]="style(19) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[19].is_reserved">20</ion-button></ion-col>
+
+  </ion-row>
+  
+    <ion-row class="ion-justify-content-start">
+      <ion-col size="1.80">
+        <ion-button expand="block" expand="block" (click)="check_seat(20)"  [ngClass]="style(20) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[20].is_reserved">21</ion-button>
+      </ion-col>
+      <ion-col size="1.80">
+        <ion-button expand="block" expand="block" (click)="check_seat(21)"  [ngClass]="style(21) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[21].is_reserved">22</ion-button>
+      </ion-col>
+      <ion-col size="1.80">
+        <ion-button expand="block" expand="block" (click)="check_seat(22)"  [ngClass]="style(22) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[22].is_reserved">23</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="block"  (click)="check_seat(23)"  [ngClass]="style(23) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[23].is_reserved">24</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="check_seat(24)"  [ngClass]="style(24) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[24].is_reserved">25</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="check_seat(25)"  [ngClass]="style(25) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[25].is_reserved">26</ion-button></ion-col>
+      <ion-col offset="3"><ion-button  expand="block" (click)="check_seat(26)"  [ngClass]="style(26) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[26].is_reserved">27</ion-button></ion-col>
+      <ion-col><ion-button expand="block"  (click)="check_seat(27)"  [ngClass]="style(27) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[27].is_reserved">28</ion-button></ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col ><ion-button expand="block"  (click)="check_seat(28)"  [ngClass]="style(28) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[28].is_reserved">29</ion-button></ion-col>
+      <ion-col ><ion-button expand="block"  (click)="check_seat(29)"  [ngClass]="style(29) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[29].is_reserved">30</ion-button></ion-col>
+      <!-- <ion-col ><ion-button expand="block" (click)="check_seat(30)"  [ngClass]="style(30) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[30].is_reserved">31</ion-button></ion-col> -->
+      <!-- <ion-col ><ion-button expand="block"  (click)="check_seat(31)"  [ngClass]="style(31) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[31].is_reserved">32</ion-button></ion-col>
+      <ion-col ><ion-button expand="block" (click)="check_seat(32)"  [ngClass]="style(32) ? 'seat_selected' : 'seat_not_selected'" [disabled]="seats[32].is_reserved">33</ion-button></ion-col> -->
+    </ion-row>
+ 
+</ion-grid>
+
+  </ion-card>
+
+  <ion-card style="background-color: rgb(112, 95, 95); width: 250px;">
+    <ion-button  Class ='seat_not_selected'></ion-button>
+    <ion-label style="color:white"> <b>available seat</b> </ion-label><br>
+    <ion-button  Class ='seat_selected'></ion-button>
+    <ion-label style="color:white"> <b>your selected seats</b> </ion-label><br>
+  <ion-button Class ='seat_selected' disabled="true"></ion-button>
+  <ion-label style="color:white"><b>seat taken </b></ion-label><br>
+
+
+  </ion-card>
+   <ion-card >
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="payment()" >Pay Now</ion-button>
+      </ion-col>
+    </ion-row>
+   </ion-card>
+</ion-content>

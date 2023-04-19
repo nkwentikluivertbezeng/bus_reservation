@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Your Bus Results
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="align-items: center;">
+  <div style="margin-left: 60px;">
+
+  <h6>{{selectedLocation | lowercase}}  <ion-icon name="arrow-forward"></ion-icon>  {{selectedDestination |lowercase}}</h6> 
+  </div>
+  <ion-card *ngIf="search_results.length>0">
+
+    <P style="color: rgb(199, 199, 199);"><b><i>HERE ARE THE LIST OF TRIPS THAT MATCH YOU REQUEST</i></b></P>
+    <swiper [slidesPerView]="1.3" >
+
+      <ng-template swiperSlide class="swiper-slide" data-swiper-autoplay="2000" style=" width:200px"  *ngFor="let B of search_results">
+       
+        <ion-card style="width:350px ;" class="a">
+          <ion-img height="80px" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80 " alt="bus"></ion-img>
+
+          <i> <h6> {{getRoute(B)}}</h6></i>
+          <div>
+            <h6><i>price:{{getprice(B)  }}</i></h6>
+            <h6><i>time:{{getTime(B) | date :'mediumTime'}}</i></h6>
+            <ion-button expand="block" (click)="book(B.schedule_id)" >book now</ion-button>
+            
+            </div>
+        </ion-card>
+   </ng-template>
+   </swiper>
+   </ion-card>
+  <ion-card *ngIf="search_results.length==0" >
+         <h3><i><b>THERE IS NO BUS SCHEDULE FROM {{selectedLocation}} to {{selectedDestination}}</b></i></h3>
+    </ion-card>
+
+</ion-content>
+

@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `buses` MODIFY `seats` INTEGER NULL DEFAULT 33;

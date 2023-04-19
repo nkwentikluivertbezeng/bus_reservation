@@ -1,0 +1,36 @@
+<ion-app >
+  <ion-header [translucent]="false" >
+    <ion-toolbar >
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <div style="display: flex ; justify-content: space-between; align-items: center; padding: 0 10px;">
+        <ion-title><span style="color:rgb(5, 85, 189)198, 230; font-weight: 800;">BOOK</span><span style="color:rgb(6, 75, 131);font-weight: 800;">NOW</span></ion-title>
+        <img src="https://cdn.lovesavingsgroup.com/logos/bus-online-ticket.jpg" alt="" height="40px" width="40px"
+          style="border-radius: 50%;">
+      </div>
+    </ion-toolbar>
+  </ion-header>
+   
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" style="margin-top: 60px;" >
+      <ion-content>
+        <ion-list id="inbox-list">
+      <!-- <ion-menu-button ></ion-menu-button> -->
+          <ion-note>BUS RESERVATION APP</ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="end" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+
+      </ion-content>
+    </ion-menu>
+    
+    <ion-router-outlet id="main-content" ></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

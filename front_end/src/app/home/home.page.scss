@@ -1,0 +1,22 @@
+ion-content{
+    background-color:black;
+    --overflow-scroll:"true";
+    &::-webkit-scrollbar{
+      display:none;
+    }
+  }
+  .swiper-container{
+    height:325px
+  }
+  .swiper-slide{
+    color:black;
+    align-items:center;
+    justify-content:center
+
+  }
+  ion-card{
+    padding-top:10px ;
+  }
+  ion-card #a{
+    box-shadow: 0 0 5px 3px rgba(0, 0, 255, 0.5);
+  }
